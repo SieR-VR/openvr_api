@@ -7,6 +7,8 @@ pub mod vr {
     pub mod version;
     pub mod public_vrtypes;
     pub mod ivrsystem;
+    pub mod ivrapplications;
+    pub mod ivrsettings;
 
     #[link(name = "openvr_api")]
     extern "C" {

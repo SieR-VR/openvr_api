@@ -19,18 +19,16 @@ mod tests {
     fn get_ivrsystem() {
         vr_init_();
 
+        let mut p_system: *const VR_IVRSystem_FnTable = core::ptr::null_mut();
+
         unsafe {
             let mut err = EVRInitError::VRInitError_None;
-            let system_version = CString::new(IVRSYSTEM_VERSION).unwrap();
+            let system_version = CString::new("FnTable:IVRSystem_022").unwrap();
 
-            let p_system = VR_GetGenericInterface(
+            p_system = VR_GetGenericInterface(
                 system_version.as_ptr(),
                 &mut err
-            ) as *const IVRSystem;
-            assert_eq!(err, EVRInitError::VRInitError_None);
-            assert!(!p_system.is_null());
-
-            ((*p_system).IsDisplayOnDesktop)();
+            ) as *const VR_IVRSystem_FnTable;
         }
     }
 }
