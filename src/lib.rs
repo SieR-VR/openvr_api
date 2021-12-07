@@ -1,14 +1,17 @@
 pub mod vr {
     use std::ffi::c_void;
 
+    pub mod version;
+    pub mod public_vrtypes;
     pub mod vrtypes;
     use vrtypes::*;
 
-    pub mod version;
-    pub mod public_vrtypes;
     pub mod ivrsystem;
     pub mod ivrapplications;
     pub mod ivrsettings;
+    pub mod ivrchaperone;
+    pub mod ivrchaperonesetup;
+    pub mod ivrcompositor;
 
     #[link(name = "openvr_api")]
     extern "C" {

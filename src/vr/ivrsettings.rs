@@ -15,7 +15,7 @@ pub const MAX_SETTINGS_KEY_LENGTH: usize = 128;
 
 #[allow(non_camel_case_types)]
 #[allow(non_snake_case)]
-pub struct IVRSettings
+pub struct VR_IVRSettings_FnTable
 {
     pub GetSettingsErrorNameFromEnum: unsafe extern "stdcall" fn(eError: EVRSettingsError) -> *const i8,
 
@@ -36,290 +36,290 @@ pub struct IVRSettings
 pub const IVRSETTINGS_VERSION: &'static str = "IVRSettings_003";
 //-----------------------------------------------------------------------------
 // steamvr keys
-pub const SteamVR_Section: &'static str = "steamvr";
-pub const SteamVR_RequireHmd_String: &'static str = "requireHmd";
-pub const SteamVR_ForcedDriverKey_String: &'static str = "forcedDriver";
-pub const SteamVR_ForcedHmdKey_String: &'static str = "forcedHmd";
-pub const SteamVR_DisplayDebug_Bool: &'static str = "displayDebug";
-pub const SteamVR_DebugProcessPipe_String: &'static str = "debugProcessPipe";
-pub const SteamVR_DisplayDebugX_Int32: &'static str = "displayDebugX";
-pub const SteamVR_DisplayDebugY_Int32: &'static str = "displayDebugY";
-pub const SteamVR_SendSystemButtonToAllApps_Bool: &'static str= "sendSystemButtonToAllApps";
-pub const SteamVR_LogLevel_Int32: &'static str = "loglevel";
-pub const SteamVR_IPD_Float: &'static str = "ipd";
-pub const SteamVR_Background_String: &'static str = "background";
-pub const SteamVR_BackgroundUseDomeProjection_Bool: &'static str = "backgroundUseDomeProjection";
-pub const SteamVR_BackgroundCameraHeight_Float: &'static str = "backgroundCameraHeight";
-pub const SteamVR_BackgroundDomeRadius_Float: &'static str = "backgroundDomeRadius";
-pub const SteamVR_GridColor_String: &'static str = "gridColor";
-pub const SteamVR_PlayAreaColor_String: &'static str = "playAreaColor";
-pub const SteamVR_TrackingLossColor_String: &'static str = "trackingLossColor";
-pub const SteamVR_ShowStage_Bool: &'static str = "showStage";
-pub const SteamVR_DrawTrackingReferences_Bool: &'static str = "drawTrackingReferences";
-pub const SteamVR_ActivateMultipleDrivers_Bool: &'static str = "activateMultipleDrivers";
-pub const SteamVR_UsingSpeakers_Bool: &'static str = "usingSpeakers";
-pub const SteamVR_SpeakersForwardYawOffsetDegrees_Float: &'static str = "speakersForwardYawOffsetDegrees";
-pub const SteamVR_BaseStationPowerManagement_Int32: &'static str = "basestationPowerManagement";
-pub const SteamVR_ShowBaseStationPowerManagementTip_Int32: &'static str = "ShowBaseStationPowerManagementTip";
-pub const SteamVR_NeverKillProcesses_Bool: &'static str = "neverKillProcesses";
-pub const SteamVR_SupersampleScale_Float: &'static str = "supersampleScale";
-pub const SteamVR_MaxRecommendedResolution_Int32: &'static str = "maxRecommendedResolution";
-pub const SteamVR_MotionSmoothing_Bool: &'static str = "motionSmoothing";
-pub const SteamVR_MotionSmoothingOverride_Int32: &'static str = "motionSmoothingOverride";
-pub const SteamVR_FramesToThrottle_Int32: &'static str = "framesToThrottle";
-pub const SteamVR_AdditionalFramesToPredict_Int32: &'static str = "additionalFramesToPredict";
-pub const SteamVR_DisableAsyncReprojection_Bool: &'static str = "disableAsync";
-pub const SteamVR_ForceFadeOnBadTracking_Bool: &'static str = "forceFadeOnBadTracking";
-pub const SteamVR_DefaultMirrorView_Int32: &'static str = "mirrorView";
-pub const SteamVR_ShowLegacyMirrorView_Bool: &'static str = "showLegacyMirrorView";
-pub const SteamVR_MirrorViewVisibility_Bool: &'static str = "showMirrorView";
-pub const SteamVR_MirrorViewDisplayMode_Int32: &'static str = "mirrorViewDisplayMode";
-pub const SteamVR_MirrorViewEye_Int32: &'static str = "mirrorViewEye";
-pub const SteamVR_MirrorViewGeometry_String: &'static str = "mirrorViewGeometry";
-pub const SteamVR_MirrorViewGeometryMaximized_String: &'static str = "mirrorViewGeometryMaximized";
-pub const SteamVR_PerfGraphVisibility_Bool: &'static str = "showPerfGraph";
-pub const SteamVR_StartMonitorFromAppLaunch: &'static str = "startMonitorFromAppLaunch";
-pub const SteamVR_StartCompositorFromAppLaunch_Bool: &'static str = "startCompositorFromAppLaunch";
-pub const SteamVR_StartDashboardFromAppLaunch_Bool: &'static str = "startDashboardFromAppLaunch";
-pub const SteamVR_StartOverlayAppsFromDashboard_Bool: &'static str = "startOverlayAppsFromDashboard";
-pub const SteamVR_EnableHomeApp: &'static str = "enableHomeApp";
-pub const SteamVR_CycleBackgroundImageTimeSec_Int32: &'static str = "CycleBackgroundImageTimeSec";
-pub const SteamVR_RetailDemo_Bool: &'static str = "retailDemo";
-pub const SteamVR_IpdOffset_Float: &'static str = "ipdOffset";
-pub const SteamVR_AllowSupersampleFiltering_Bool: &'static str = "allowSupersampleFiltering";
-pub const SteamVR_SupersampleManualOverride_Bool: &'static str = "supersampleManualOverride";
-pub const SteamVR_EnableLinuxVulkanAsync_Bool: &'static str = "enableLinuxVulkanAsync";
-pub const SteamVR_AllowDisplayLockedMode_Bool: &'static str = "allowDisplayLockedMode";
-pub const SteamVR_HaveStartedTutorialForNativeChaperoneDriver_Bool: &'static str = "haveStartedTutorialForNativeChaperoneDriver";
-pub const SteamVR_ForceWindows32bitVRMonitor: &'static str = "forceWindows32BitVRMonitor";
-pub const SteamVR_DebugInputBinding: &'static str = "debugInputBinding";
-pub const SteamVR_DoNotFadeToGrid: &'static str = "doNotFadeToGrid";
-pub const SteamVR_RenderCameraMode: &'static str = "renderCameraMode";
-pub const SteamVR_EnableSharedResourceJournaling: &'static str = "enableSharedResourceJournaling";
-pub const SteamVR_EnableSafeMode: &'static str = "enableSafeMode";
-pub const SteamVR_PreferredRefreshRate: &'static str = "preferredRefreshRate";
-pub const SteamVR_LastVersionNotice: &'static str = "lastVersionNotice";
-pub const SteamVR_LastVersionNoticeDate: &'static str = "lastVersionNoticeDate";
-pub const SteamVR_HmdDisplayColorGainR_Float: &'static str = "hmdDisplayColorGainR";
-pub const SteamVR_HmdDisplayColorGainG_Float: &'static str = "hmdDisplayColorGainG";
-pub const SteamVR_HmdDisplayColorGainB_Float: &'static str = "hmdDisplayColorGainB";
-pub const SteamVR_CustomIconStyle_String: &'static str = "customIconStyle";
-pub const SteamVR_CustomOffIconStyle_String: &'static str = "customOffIconStyle";
-pub const SteamVR_CustomIconForceUpdate_String: &'static str = "customIconForceUpdate";
-pub const SteamVR_AllowGlobalActionSetPriority: &'static str = "globalActionSetPriority";
-pub const SteamVR_OverlayRenderQuality: &'static str = "overlayRenderQuality_2";
-pub const SteamVR_BlockOculusSDKOnOpenVRLaunchOption_Bool: &'static str = "blockOculusSDKOnOpenVRLaunchOption";
-pub const SteamVR_BlockOculusSDKOnAllLaunches_Bool: &'static str = "blockOculusSDKOnAllLaunches";
-pub const SteamVR_HDCPLegacyCompatibility_Bool: &'static str = "hdcp14legacyCompatibility";
-pub const SteamVR_UsePrism_Bool: &'static str = "usePrism";
+pub const STEAMVR_SECTION: &'static str = "steamvr";
+pub const STEAMVR_REQUIRE_HMD_STRING: &'static str = "requireHmd";
+pub const STEAMVR_FORCED_DRIVER_KEY_STRING: &'static str = "forcedDriver";
+pub const STEAMVR_FORCED_HMD_KEY_STRING: &'static str = "forcedHmd";
+pub const STEAMVR_DISPLAY_DEBUG_BOOL: &'static str = "displayDebug";
+pub const STEAMVR_DEBUG_PROCESS_PIPE_STRING: &'static str = "debugProcessPipe";
+pub const STEAMVR_DISPLAY_DEBUG_X_INT32: &'static str = "displayDebugX";
+pub const STEAMVR_DISPLAY_DEBUG_Y_INT32: &'static str = "displayDebugY";
+pub const STEAMVR_SEND_SYSTEM_BUTTON_TO_ALL_APPS_BOOL: &'static str= "sendSystemButtonToAllApps";
+pub const STEAMVR_LOG_LEVEL_INT32: &'static str = "loglevel";
+pub const STEAMVR_IPD_FLOAT: &'static str = "ipd";
+pub const STEAMVR_BACKGROUND_STRING: &'static str = "background";
+pub const STEAMVR_BACKGROUND_USE_DOME_PROJECTION_BOOL: &'static str = "backgroundUseDomeProjection";
+pub const STEAMVR_BACKGROUND_CAMERA_HEIGHT_FLOAT: &'static str = "backgroundCameraHeight";
+pub const STEAMVR_BACKGROUND_DOME_RADIUS_FLOAT: &'static str = "backgroundDomeRadius";
+pub const STEAMVR_GRID_COLOR_STRING: &'static str = "gridColor";
+pub const STEAMVR_PLAY_AREA_COLOR_STRING: &'static str = "playAreaColor";
+pub const STEAMVR_TRACKING_LOSS_COLOR_STRING: &'static str = "trackingLossColor";
+pub const STEAMVR_SHOW_STAGE_BOOL: &'static str = "showStage";
+pub const STEAMVR_DRAW_TRACKING_REFERENCES_BOOL: &'static str = "drawTrackingReferences";
+pub const STEAMVR_ACTIVATE_MULTIPLE_DRIVERS_BOOL: &'static str = "activateMultipleDrivers";
+pub const STEAMVR_USING_SPEAKERS_BOOL: &'static str = "usingSpeakers";
+pub const STEAMVR_SPEAKERS_FORWARD_YAW_OFFSET_DEGREES_FLOAT: &'static str = "speakersForwardYawOffsetDegrees";
+pub const STEAMVR_BASE_STATION_POWER_MANAGEMENT_INT32: &'static str = "basestationPowerManagement";
+pub const STEAMVR_SHOW_BASE_STATION_POWER_MANAGEMENT_TIP_INT32: &'static str = "ShowBaseStationPowerManagementTip";
+pub const STEAMVR_NEVER_KILL_PROCESSES_BOOL: &'static str = "neverKillProcesses";
+pub const STEAMVR_SUPERSAMPLE_SCALE_FLOAT: &'static str = "supersampleScale";
+pub const STEAMVR_MAX_RECOMMENDED_RESOLUTION_INT32: &'static str = "maxRecommendedResolution";
+pub const STEAMVR_MOTION_SMOOTHING_BOOL: &'static str = "motionSmoothing";
+pub const STEAMVR_MOTION_SMOOTHING_OVERRIDE_INT32: &'static str = "motionSmoothingOverride";
+pub const STEAMVR_FRAMES_TO_THROTTLE_INT32: &'static str = "framesToThrottle";
+pub const STEAMVR_ADDITIONAL_FRAMES_TO_PREDICT_INT32: &'static str = "additionalFramesToPredict";
+pub const STEAMVR_DISABLE_ASYNC_REPROJECTION_BOOL: &'static str = "disableAsync";
+pub const STEAMVR_FORCE_FADE_ON_BAD_TRACKING_BOOL: &'static str = "forceFadeOnBadTracking";
+pub const STEAMVR_DEFAULT_MIRROR_VIEW_INT32: &'static str = "mirrorView";
+pub const STEAMVR_SHOW_LEGACY_MIRROR_VIEW_BOOL: &'static str = "showLegacyMirrorView";
+pub const STEAMVR_MIRROR_VIEW_VISIBILITY_BOOL: &'static str = "showMirrorView";
+pub const STEAMVR_MIRROR_VIEW_DISPLAY_MODE_INT32: &'static str = "mirrorViewDisplayMode";
+pub const STEAMVR_MIRROR_VIEW_EYE_INT32: &'static str = "mirrorViewEye";
+pub const STEAMVR_MIRROR_VIEW_GEOMETRY_STRING: &'static str = "mirrorViewGeometry";
+pub const STEAMVR_MIRROR_VIEW_GEOMETRY_MAXIMIZED_STRING: &'static str = "mirrorViewGeometryMaximized";
+pub const STEAMVR_PERF_GRAPH_VISIBILITY_BOOL: &'static str = "showPerfGraph";
+pub const STEAMVR_START_MONITOR_FROM_APP_LAUNCH: &'static str = "startMonitorFromAppLaunch";
+pub const STEAMVR_START_COMPOSITOR_FROM_APP_LAUNCH_BOOL: &'static str = "startCompositorFromAppLaunch";
+pub const STEAMVR_START_DASHBOARD_FROM_APP_LAUNCH_BOOL: &'static str = "startDashboardFromAppLaunch";
+pub const STEAMVR_START_OVERLAY_APPS_FROM_DASHBOARD_BOOL: &'static str = "startOverlayAppsFromDashboard";
+pub const STEAMVR_ENABLE_HOME_APP: &'static str = "enableHomeApp";
+pub const STEAMVR_CYCLE_BACKGROUND_IMAGE_TIME_SEC_INT32: &'static str = "CycleBackgroundImageTimeSec";
+pub const STEAMVR_RETAIL_DEMO_BOOL: &'static str = "retailDemo";
+pub const STEAMVR_IPD_OFFSET_FLOAT: &'static str = "ipdOffset";
+pub const STEAMVR_ALLOW_SUPERSAMPLE_FILTERING_BOOL: &'static str = "allowSupersampleFiltering";
+pub const STEAMVR_SUPERSAMPLE_MANUAL_OVERRIDE_BOOL: &'static str = "supersampleManualOverride";
+pub const STEAMVR_ENABLE_LINUX_VULKAN_ASYNC_BOOL: &'static str = "enableLinuxVulkanAsync";
+pub const STEAMVR_ALLOW_DISPLAY_LOCKED_MODE_BOOL: &'static str = "allowDisplayLockedMode";
+pub const STEAMVR_HAVE_STARTED_TUTORIAL_FOR_NATIVE_CHAPERONE_DRIVER_BOOL: &'static str = "haveStartedTutorialForNativeChaperoneDriver";
+pub const STEAMVR_FORCE_WINDOWS32BIT_VRMONITOR: &'static str = "forceWindows32BitVRMonitor";
+pub const STEAMVR_DEBUG_INPUT_BINDING: &'static str = "debugInputBinding";
+pub const STEAMVR_DO_NOT_FADE_TO_GRID: &'static str = "doNotFadeToGrid";
+pub const STEAMVR_RENDER_CAMERA_MODE: &'static str = "renderCameraMode";
+pub const STEAMVR_ENABLE_SHARED_RESOURCE_JOURNALING: &'static str = "enableSharedResourceJournaling";
+pub const STEAMVR_ENABLE_SAFE_MODE: &'static str = "enableSafeMode";
+pub const STEAMVR_PREFERRED_REFRESH_RATE: &'static str = "preferredRefreshRate";
+pub const STEAMVR_LAST_VERSION_NOTICE: &'static str = "lastVersionNotice";
+pub const STEAMVR_LAST_VERSION_NOTICE_DATE: &'static str = "lastVersionNoticeDate";
+pub const STEAMVR_HMD_DISPLAY_COLOR_GAIN_R_FLOAT: &'static str = "hmdDisplayColorGainR";
+pub const STEAMVR_HMD_DISPLAY_COLOR_GAIN_G_FLOAT: &'static str = "hmdDisplayColorGainG";
+pub const STEAMVR_HMD_DISPLAY_COLOR_GAIN_B_FLOAT: &'static str = "hmdDisplayColorGainB";
+pub const STEAMVR_CUSTOM_ICON_STYLE_STRING: &'static str = "customIconStyle";
+pub const STEAMVR_CUSTOM_OFF_ICON_STYLE_STRING: &'static str = "customOffIconStyle";
+pub const STEAMVR_CUSTOM_ICON_FORCE_UPDATE_STRING: &'static str = "customIconForceUpdate";
+pub const STEAMVR_ALLOW_GLOBAL_ACTION_SET_PRIORITY: &'static str = "globalActionSetPriority";
+pub const STEAMVR_OVERLAY_RENDER_QUALITY: &'static str = "overlayRenderQuality_2";
+pub const STEAMVR_BLOCK_OCULUS_SDKON_OPEN_VRLAUNCH_OPTION_BOOL: &'static str = "blockOculusSDKOnOpenVRLaunchOption";
+pub const STEAMVR_BLOCK_OCULUS_SDKON_ALL_LAUNCHES_BOOL: &'static str = "blockOculusSDKOnAllLaunches";
+pub const STEAMVR_HDCPLEGACY_COMPATIBILITY_BOOL: &'static str = "hdcp14legacyCompatibility";
+pub const STEAMVR_USE_PRISM_BOOL: &'static str = "usePrism";
 
 //-----------------------------------------------------------------------------
 // direct mode keys
-pub const DirectMode_Section: &'static str = "direct_mode";
-pub const DirectMode_Enable_Bool: &'static str = "enable";
-pub const DirectMode_Count_Int32: &'static str = "count";
-pub const DirectMode_EdidVid_Int32: &'static str = "edidVid";
-pub const DirectMode_EdidPid_Int32: &'static str = "edidPid";
+pub const DIRECT_MODE_SECTION: &'static str = "direct_mode";
+pub const DIRECT_MODE_ENABLE_BOOL: &'static str = "enable";
+pub const DIRECT_MODE_COUNT_INT32: &'static str = "count";
+pub const DIRECT_MODE_EDID_VID_INT32: &'static str = "edidVid";
+pub const DIRECT_MODE_EDID_PID_INT32: &'static str = "edidPid";
 
 //-----------------------------------------------------------------------------
 // lighthouse keys
-pub const Lighthouse_Section: &'static str = "driver_lighthouse";
-pub const Lighthouse_DisableIMU_Bool: &'static str = "disableimu";
-pub const Lighthouse_DisableIMUExceptHMD_Bool: &'static str = "disableimuexcepthmd";
-pub const Lighthouse_UseDisambiguation_String: &'static str = "usedisambiguation";
-pub const Lighthouse_DisambiguationDebug_Int32: &'static str = "disambiguationdebug";
-pub const Lighthouse_PrimaryBasestation_Int32: &'static str = "primarybasestation";
-pub const Lighthouse_DBHistory_Bool: &'static str = "dbhistory";
-pub const Lighthouse_EnableBluetooth_Bool: &'static str = "enableBluetooth";
-pub const Lighthouse_PowerManagedBaseStations_String: &'static str = "PowerManagedBaseStations";
-pub const Lighthouse_PowerManagedBaseStations2_String: &'static str = "PowerManagedBaseStations2";
-pub const Lighthouse_InactivityTimeoutForBaseStations_Int32: &'static str = "InactivityTimeoutForBaseStations";
-pub const Lighthouse_EnableImuFallback_Bool: &'static str = "enableImuFallback";
+pub const LIGHTHOUSE_SECTION: &'static str = "driver_lighthouse";
+pub const LIGHTHOUSE_DISABLE_IMU_BOOL: &'static str = "disableimu";
+pub const LIGHTHOUSE_DISABLE_IMUEXCEPT_HMD_BOOL: &'static str = "disableimuexcepthmd";
+pub const LIGHTHOUSE_USE_DISAMBIGUATION_STRING: &'static str = "usedisambiguation";
+pub const LIGHTHOUSE_DISAMBIGUATION_DEBUG_INT32: &'static str = "disambiguationdebug";
+pub const LIGHTHOUSE_PRIMARY_BASESTATION_INT32: &'static str = "primarybasestation";
+pub const LIGHTHOUSE_DBHISTORY_BOOL: &'static str = "dbhistory";
+pub const LIGHTHOUSE_ENABLE_BLUETOOTH_BOOL: &'static str = "enableBluetooth";
+pub const LIGHTHOUSE_POWER_MANAGED_BASE_STATIONS_STRING: &'static str = "PowerManagedBaseStations";
+pub const LIGHTHOUSE_POWER_MANAGED_BASE_STATIONS2_STRING: &'static str = "PowerManagedBaseStations2";
+pub const LIGHTHOUSE_INACTIVITY_TIMEOUT_FOR_BASE_STATIONS_INT32: &'static str = "InactivityTimeoutForBaseStations";
+pub const LIGHTHOUSE_ENABLE_IMU_FALLBACK_BOOL: &'static str = "enableImuFallback";
 
 //-----------------------------------------------------------------------------
 // null keys
-pub const Null_Section: &'static str = "driver_null";
-pub const Null_SerialNumber_String: &'static str = "serialNumber";
-pub const Null_ModelNumber_String: &'static str = "modelNumber";
-pub const Null_WindowX_Int32: &'static str = "windowX";
-pub const Null_WindowY_Int32: &'static str = "windowY";
-pub const Null_WindowWidth_Int32: &'static str = "windowWidth";
-pub const Null_WindowHeight_Int32: &'static str = "windowHeight";
-pub const Null_RenderWidth_Int32: &'static str = "renderWidth";
-pub const Null_RenderHeight_Int32: &'static str = "renderHeight";
-pub const Null_SecondsFromVsyncToPhotons_Float: &'static str = "secondsFromVsyncToPhotons";
-pub const Null_DisplayFrequency_Float: &'static str = "displayFrequency";
+pub const NULL_SECTION: &'static str = "driver_null";
+pub const NULL_SERIAL_NUMBER_STRING: &'static str = "serialNumber";
+pub const NULL_MODEL_NUMBER_STRING: &'static str = "modelNumber";
+pub const NULL_WINDOW_X_INT32: &'static str = "windowX";
+pub const NULL_WINDOW_Y_INT32: &'static str = "windowY";
+pub const NULL_WINDOW_WIDTH_INT32: &'static str = "windowWidth";
+pub const NULL_WINDOW_HEIGHT_INT32: &'static str = "windowHeight";
+pub const NULL_RENDER_WIDTH_INT32: &'static str = "renderWidth";
+pub const NULL_RENDER_HEIGHT_INT32: &'static str = "renderHeight";
+pub const NULL_SECONDS_FROM_VSYNC_TO_PHOTONS_FLOAT: &'static str = "secondsFromVsyncToPhotons";
+pub const NULL_DISPLAY_FREQUENCY_FLOAT: &'static str = "displayFrequency";
 
 //-----------------------------------------------------------------------------
 // Windows MR keys
-pub const WindowsMR_Section: &'static str = "driver_holographic";
+pub const WINDOWS_MR_SECTION: &'static str = "driver_holographic";
 
 //-----------------------------------------------------------------------------
 // user interface keys
-pub const UserInterface_Section: &'static str = "userinterface";
-pub const UserInterface_StatusAlwaysOnTop_Bool: &'static str = "StatusAlwaysOnTop";
-pub const UserInterface_MinimizeToTray_Bool: &'static str = "MinimizeToTray";
-pub const UserInterface_HidePopupsWhenStatusMinimized_Bool: &'static str = "HidePopupsWhenStatusMinimized";
-pub const UserInterface_Screenshots_Bool: &'static str = "screenshots";
-pub const UserInterface_ScreenshotType_Int: &'static str = "screenshotType";
+pub const USER_INTERFACE_SECTION: &'static str = "userinterface";
+pub const USER_INTERFACE_STATUS_ALWAYS_ON_TOP_BOOL: &'static str = "StatusAlwaysOnTop";
+pub const USER_INTERFACE_MINIMIZE_TO_TRAY_BOOL: &'static str = "MinimizeToTray";
+pub const USER_INTERFACE_HIDE_POPUPS_WHEN_STATUS_MINIMIZED_BOOL: &'static str = "HidePopupsWhenStatusMinimized";
+pub const USER_INTERFACE_SCREENSHOTS_BOOL: &'static str = "screenshots";
+pub const USER_INTERFACE_SCREENSHOT_TYPE_INT: &'static str = "screenshotType";
 
 //-----------------------------------------------------------------------------
 // notification keys
-pub const Notifications_Section: &'static str = "notifications";
-pub const Notifications_DoNotDisturb_Bool: &'static str = "DoNotDisturb";
+pub const NOTIFICATIONS_SECTION: &'static str = "notifications";
+pub const NOTIFICATIONS_DO_NOT_DISTURB_BOOL: &'static str = "DoNotDisturb";
 
 //-----------------------------------------------------------------------------
 // keyboard keys
-pub const Keyboard_Section: &'static str = "keyboard";
-pub const Keyboard_TutorialCompletions: &'static str = "TutorialCompletions";
-pub const Keyboard_ScaleX: &'static str = "ScaleX";
-pub const Keyboard_ScaleY: &'static str = "ScaleY";
-pub const Keyboard_OffsetLeftX: &'static str = "OffsetLeftX";
-pub const Keyboard_OffsetRightX: &'static str = "OffsetRightX";
-pub const Keyboard_OffsetY: &'static str = "OffsetY";
-pub const Keyboard_Smoothing: &'static str = "Smoothing";
+pub const KEYBOARD_SECTION: &'static str = "keyboard";
+pub const KEYBOARD_TUTORIAL_COMPLETIONS: &'static str = "TutorialCompletions";
+pub const KEYBOARD_SCALE_X: &'static str = "ScaleX";
+pub const KEYBOARD_SCALE_Y: &'static str = "ScaleY";
+pub const KEYBOARD_OFFSET_LEFT_X: &'static str = "OffsetLeftX";
+pub const KEYBOARD_OFFSET_RIGHT_X: &'static str = "OffsetRightX";
+pub const KEYBOARD_OFFSET_Y: &'static str = "OffsetY";
+pub const KEYBOARD_SMOOTHING: &'static str = "Smoothing";
 
 //-----------------------------------------------------------------------------
 // perf keys
-pub const Perf_Section: &'static str = "perfcheck";
-pub const Perf_PerfGraphInHMD_Bool: &'static str = "perfGraphInHMD";
-pub const Perf_AllowTimingStore_Bool: &'static str = "allowTimingStore";
-pub const Perf_SaveTimingsOnExit_Bool: &'static str = "saveTimingsOnExit";
-pub const Perf_TestData_Float: &'static str = "perfTestData";
-pub const Perf_GPUProfiling_Bool: &'static str = "GPUProfiling";
+pub const PERF_SECTION: &'static str = "perfcheck";
+pub const PERF_PERF_GRAPH_IN_HMD_BOOL: &'static str = "perfGraphInHMD";
+pub const PERF_ALLOW_TIMING_STORE_BOOL: &'static str = "allowTimingStore";
+pub const PERF_SAVE_TIMINGS_ON_EXIT_BOOL: &'static str = "saveTimingsOnExit";
+pub const PERF_TEST_DATA_FLOAT: &'static str = "perfTestData";
+pub const PERF_GPUPROFILING_BOOL: &'static str = "GPUProfiling";
 
 //-----------------------------------------------------------------------------
 // collision bounds keys
-pub const CollisionBounds_Section: &'static str = "collisionBounds";
-pub const CollisionBounds_Style_Int32: &'static str = "CollisionBoundsStyle";
-pub const CollisionBounds_GroundPerimeterOn_Bool: &'static str = "CollisionBoundsGroundPerimeterOn";
-pub const CollisionBounds_CenterMarkerOn_Bool: &'static str = "CollisionBoundsCenterMarkerOn";
-pub const CollisionBounds_PlaySpaceOn_Bool: &'static str = "CollisionBoundsPlaySpaceOn";
-pub const CollisionBounds_FadeDistance_Float: &'static str = "CollisionBoundsFadeDistance";
-pub const CollisionBounds_WallHeight_Float: &'static str = "CollisionBoundsWallHeight";
-pub const CollisionBounds_ColorGammaR_Int32: &'static str = "CollisionBoundsColorGammaR";
-pub const CollisionBounds_ColorGammaG_Int32: &'static str = "CollisionBoundsColorGammaG";
-pub const CollisionBounds_ColorGammaB_Int32: &'static str = "CollisionBoundsColorGammaB";
-pub const CollisionBounds_ColorGammaA_Int32: &'static str = "CollisionBoundsColorGammaA";
-pub const CollisionBounds_EnableDriverImport: &'static str = "enableDriverBoundsImport";
+pub const COLLISION_BOUNDS_SECTION: &'static str = "collisionBounds";
+pub const COLLISION_BOUNDS_STYLE_INT32: &'static str = "CollisionBoundsStyle";
+pub const COLLISION_BOUNDS_GROUND_PERIMETER_ON_BOOL: &'static str = "CollisionBoundsGroundPerimeterOn";
+pub const COLLISION_BOUNDS_CENTER_MARKER_ON_BOOL: &'static str = "CollisionBoundsCenterMarkerOn";
+pub const COLLISION_BOUNDS_PLAY_SPACE_ON_BOOL: &'static str = "CollisionBoundsPlaySpaceOn";
+pub const COLLISION_BOUNDS_FADE_DISTANCE_FLOAT: &'static str = "CollisionBoundsFadeDistance";
+pub const COLLISION_BOUNDS_WALL_HEIGHT_FLOAT: &'static str = "CollisionBoundsWallHeight";
+pub const COLLISION_BOUNDS_COLOR_GAMMA_R_INT32: &'static str = "CollisionBoundsColorGammaR";
+pub const COLLISION_BOUNDS_COLOR_GAMMA_G_INT32: &'static str = "CollisionBoundsColorGammaG";
+pub const COLLISION_BOUNDS_COLOR_GAMMA_B_INT32: &'static str = "CollisionBoundsColorGammaB";
+pub const COLLISION_BOUNDS_COLOR_GAMMA_A_INT32: &'static str = "CollisionBoundsColorGammaA";
+pub const COLLISION_BOUNDS_ENABLE_DRIVER_IMPORT: &'static str = "enableDriverBoundsImport";
 
 //-----------------------------------------------------------------------------
 // camera keys
-pub const Camera_Section: &'static str = "camera";
-pub const Camera_EnableCamera_Bool: &'static str = "enableCamera";
-pub const Camera_ShowOnController_Bool: &'static str = "showOnController";
-pub const Camera_EnableCameraForCollisionBounds_Bool: &'static str = "enableCameraForCollisionBounds";
-pub const Camera_RoomView_Int32: &'static str = "roomView";
-pub const Camera_BoundsColorGammaR_Int32: &'static str = "cameraBoundsColorGammaR";
-pub const Camera_BoundsColorGammaG_Int32: &'static str = "cameraBoundsColorGammaG";
-pub const Camera_BoundsColorGammaB_Int32: &'static str = "cameraBoundsColorGammaB";
-pub const Camera_BoundsColorGammaA_Int32: &'static str = "cameraBoundsColorGammaA";
-pub const Camera_BoundsStrength_Int32: &'static str = "cameraBoundsStrength";
-pub const Camera_RoomViewStyle_Int32: &'static str = "roomViewStyle";
+pub const CAMERA_SECTION: &'static str = "camera";
+pub const CAMERA_ENABLE_CAMERA_BOOL: &'static str = "enableCamera";
+pub const CAMERA_SHOW_ON_CONTROLLER_BOOL: &'static str = "showOnController";
+pub const CAMERA_ENABLE_CAMERA_FOR_COLLISION_BOUNDS_BOOL: &'static str = "enableCameraForCollisionBounds";
+pub const CAMERA_ROOM_VIEW_INT32: &'static str = "roomView";
+pub const CAMERA_BOUNDS_COLOR_GAMMA_R_INT32: &'static str = "cameraBoundsColorGammaR";
+pub const CAMERA_BOUNDS_COLOR_GAMMA_G_INT32: &'static str = "cameraBoundsColorGammaG";
+pub const CAMERA_BOUNDS_COLOR_GAMMA_B_INT32: &'static str = "cameraBoundsColorGammaB";
+pub const CAMERA_BOUNDS_COLOR_GAMMA_A_INT32: &'static str = "cameraBoundsColorGammaA";
+pub const CAMERA_BOUNDS_STRENGTH_INT32: &'static str = "cameraBoundsStrength";
+pub const CAMERA_ROOM_VIEW_STYLE_INT32: &'static str = "roomViewStyle";
 
 //-----------------------------------------------------------------------------
 // audio keys
-pub const audio_Section: &'static str = "audio";
-pub const audio_SetOsDefaultPlaybackDevice_Bool: &'static str = "setOsDefaultPlaybackDevice";
-pub const audio_EnablePlaybackDeviceOverride_Bool: &'static str = "enablePlaybackDeviceOverride";
-pub const audio_PlaybackDeviceOverride_String: &'static str = "playbackDeviceOverride";
-pub const audio_PlaybackDeviceOverrideName_String: &'static str = "playbackDeviceOverrideName";
-pub const audio_SetOsDefaultRecordingDevice_Bool: &'static str = "setOsDefaultRecordingDevice";
-pub const audio_EnableRecordingDeviceOverride_Bool: &'static str = "enableRecordingDeviceOverride";
-pub const audio_RecordingDeviceOverride_String: &'static str = "recordingDeviceOverride";
-pub const audio_RecordingDeviceOverrideName_String: &'static str = "recordingDeviceOverrideName";
-pub const audio_EnablePlaybackMirror_Bool: &'static str = "enablePlaybackMirror";
-pub const audio_PlaybackMirrorDevice_String: &'static str = "playbackMirrorDevice";
-pub const audio_PlaybackMirrorDeviceName_String: &'static str = "playbackMirrorDeviceName";
-pub const audio_OldPlaybackMirrorDevice_String: &'static str = "onPlaybackMirrorDevice";
-pub const audio_ActiveMirrorDevice_String: &'static str = "activePlaybackMirrorDevice";
-pub const audio_EnablePlaybackMirrorIndependentVolume_Bool: &'static str = "enablePlaybackMirrorIndependentVolume";
-pub const audio_LastHmdPlaybackDeviceId_String: &'static str = "lastHmdPlaybackDeviceId";
-pub const audio_VIVEHDMIGain: &'static str = "viveHDMIGain";
-pub const audio_DualSpeakerAndJackOutput_Bool: &'static str = "dualSpeakerAndJackOutput";
-pub const audio_MuteMicMonitor_Bool: &'static str = "muteMicMonitor";
+pub const AUDIO_SECTION: &'static str = "audio";
+pub const AUDIO_SET_OS_DEFAULT_PLAYBACK_DEVICE_BOOL: &'static str = "setOsDefaultPlaybackDevice";
+pub const AUDIO_ENABLE_PLAYBACK_DEVICE_OVERRIDE_BOOL: &'static str = "enablePlaybackDeviceOverride";
+pub const AUDIO_PLAYBACK_DEVICE_OVERRIDE_STRING: &'static str = "playbackDeviceOverride";
+pub const AUDIO_PLAYBACK_DEVICE_OVERRIDE_NAME_STRING: &'static str = "playbackDeviceOverrideName";
+pub const AUDIO_SET_OS_DEFAULT_RECORDING_DEVICE_BOOL: &'static str = "setOsDefaultRecordingDevice";
+pub const AUDIO_ENABLE_RECORDING_DEVICE_OVERRIDE_BOOL: &'static str = "enableRecordingDeviceOverride";
+pub const AUDIO_RECORDING_DEVICE_OVERRIDE_STRING: &'static str = "recordingDeviceOverride";
+pub const AUDIO_RECORDING_DEVICE_OVERRIDE_NAME_STRING: &'static str = "recordingDeviceOverrideName";
+pub const AUDIO_ENABLE_PLAYBACK_MIRROR_BOOL: &'static str = "enablePlaybackMirror";
+pub const AUDIO_PLAYBACK_MIRROR_DEVICE_STRING: &'static str = "playbackMirrorDevice";
+pub const AUDIO_PLAYBACK_MIRROR_DEVICE_NAME_STRING: &'static str = "playbackMirrorDeviceName";
+pub const AUDIO_OLD_PLAYBACK_MIRROR_DEVICE_STRING: &'static str = "onPlaybackMirrorDevice";
+pub const AUDIO_ACTIVE_MIRROR_DEVICE_STRING: &'static str = "activePlaybackMirrorDevice";
+pub const AUDIO_ENABLE_PLAYBACK_MIRROR_INDEPENDENT_VOLUME_BOOL: &'static str = "enablePlaybackMirrorIndependentVolume";
+pub const AUDIO_LAST_HMD_PLAYBACK_DEVICE_ID_STRING: &'static str = "lastHmdPlaybackDeviceId";
+pub const AUDIO_VIVEHDMIGAIN: &'static str = "viveHDMIGain";
+pub const AUDIO_DUAL_SPEAKER_AND_JACK_OUTPUT_BOOL: &'static str = "dualSpeakerAndJackOutput";
+pub const AUDIO_MUTE_MIC_MONITOR_BOOL: &'static str = "muteMicMonitor";
 
 //-----------------------------------------------------------------------------
 // power management keys
-pub const Power_Section: &'static str = "power";
-pub const Power_PowerOffOnExit_Bool: &'static str = "powerOffOnExit";
-pub const Power_TurnOffScreensTimeout_Float: &'static str = "turnOffScreensTimeout";
-pub const Power_TurnOffControllersTimeout_Float: &'static str = "turnOffControllersTimeout";
-pub const Power_ReturnToWatchdogTimeout_Float: &'static str = "returnToWatchdogTimeout";
-pub const Power_AutoLaunchSteamVROnButtonPress: &'static str = "autoLaunchSteamVROnButtonPress";
-pub const Power_PauseCompositorOnStandby_Bool: &'static str = "pauseCompositorOnStandby";
+pub const POWER_SECTION: &'static str = "power";
+pub const POWER_POWER_OFF_ON_EXIT_BOOL: &'static str = "powerOffOnExit";
+pub const POWER_TURN_OFF_SCREENS_TIMEOUT_FLOAT: &'static str = "turnOffScreensTimeout";
+pub const POWER_TURN_OFF_CONTROLLERS_TIMEOUT_FLOAT: &'static str = "turnOffControllersTimeout";
+pub const POWER_RETURN_TO_WATCHDOG_TIMEOUT_FLOAT: &'static str = "returnToWatchdogTimeout";
+pub const POWER_AUTO_LAUNCH_STEAMVRON_BUTTON_PRESS: &'static str = "autoLaunchSteamVROnButtonPress";
+pub const POWER_PAUSE_COMPOSITOR_ON_STANDBY_BOOL: &'static str = "pauseCompositorOnStandby";
 
 //-----------------------------------------------------------------------------
 // dashboard keys
-pub const Dashboard_Section: &'static str = "dashboard";
-pub const Dashboard_EnableDashboard_Bool: &'static str = "enableDashboard";
-pub const Dashboard_ArcadeMode_Bool: &'static str = "arcadeMode";
-pub const Dashboard_Position: &'static str = "position";
-pub const Dashboard_DesktopScale: &'static str = "desktopScale";
-pub const Dashboard_DashboardScale: &'static str = "dashboardScale";
-pub const Dashboard_UseStandaloneSystemLayer: &'static str = "standaloneSystemLayer";
+pub const DASHBOARD_SECTION: &'static str = "dashboard";
+pub const DASHBOARD_ENABLE_DASHBOARD_BOOL: &'static str = "enableDashboard";
+pub const DASHBOARD_ARCADE_MODE_BOOL: &'static str = "arcadeMode";
+pub const DASHBOARD_POSITION: &'static str = "position";
+pub const DASHBOARD_DESKTOP_SCALE: &'static str = "desktopScale";
+pub const DASHBOARD_DASHBOARD_SCALE: &'static str = "dashboardScale";
+pub const DASHBOARD_USE_STANDALONE_SYSTEM_LAYER: &'static str = "standaloneSystemLayer";
 
 //-----------------------------------------------------------------------------
 // model skin keys
-pub const modelskin_Section: &'static str = "modelskins";
+pub const MODELSKIN_SECTION: &'static str = "modelskins";
 
 //-----------------------------------------------------------------------------
 // driver keys - These could be checked in any driver_<name> section
-pub const Driver_Enable_Bool: &'static str = "enable";
-pub const Driver_BlockedBySafemode_Bool: &'static str = "blocked_by_safe_mode";
-pub const Driver_LoadPriority_Int32: &'static str = "loadPriority";
+pub const DRIVER_ENABLE_BOOL: &'static str = "enable";
+pub const DRIVER_BLOCKED_BY_SAFEMODE_BOOL: &'static str = "blocked_by_safe_mode";
+pub const DRIVER_LOAD_PRIORITY_INT32: &'static str = "loadPriority";
 
 //-----------------------------------------------------------------------------
 // web interface keys
-pub const WebInterface_Section: &'static str = "WebInterface";
+pub const WEB_INTERFACE_SECTION: &'static str = "WebInterface";
 
 //-----------------------------------------------------------------------------
 // vrwebhelper keys
-pub const VRWebHelper_Section: &'static str = "VRWebHelper";
-pub const VRWebHelper_DebuggerEnabled_Bool: &'static str = "DebuggerEnabled";
-pub const VRWebHelper_DebuggerPort_Int32: &'static str = "DebuggerPort";
+pub const VRWEB_HELPER_SECTION: &'static str = "VRWebHelper";
+pub const VRWEB_HELPER_DEBUGGER_ENABLED_BOOL: &'static str = "DebuggerEnabled";
+pub const VRWEB_HELPER_DEBUGGER_PORT_INT32: &'static str = "DebuggerPort";
 
 //-----------------------------------------------------------------------------
 // tracking overrides - keys are device paths, values are the device paths their
 //  tracking/pose information overrides
-pub const TrackingOverride_Section: &'static str = "TrackingOverrides";
+pub const TRACKING_OVERRIDE_SECTION: &'static str = "TrackingOverrides";
 
 //-----------------------------------------------------------------------------
 // per-app keys - the section name for these is the app key itself. Some of these are prefixed by the controller type
-pub const App_BindingAutosaveURLSuffix_String: &'static str = "AutosaveURL";
-pub const App_BindingLegacyAPISuffix_String: &'static str = "_legacy";
-pub const App_BindingSteamVRInputAPISuffix_String: &'static str = "_steamvrinput";
-pub const App_BindingCurrentURLSuffix_String: &'static str = "CurrentURL";
-pub const App_BindingPreviousURLSuffix_String: &'static str = "PreviousURL";
-pub const App_NeedToUpdateAutosaveSuffix_Bool: &'static str = "NeedToUpdateAutosave";
-pub const App_DominantHand_Int32: &'static str = "DominantHand";
-pub const App_BlockOculusSDK_Bool: &'static str = "blockOculusSDK";
+pub const APP_BINDING_AUTOSAVE_URLSUFFIX_STRING: &'static str = "AutosaveURL";
+pub const APP_BINDING_LEGACY_APISUFFIX_STRING: &'static str = "_legacy";
+pub const APP_BINDING_STEAMVRINPUT_APISUFFIX_STRING: &'static str = "_steamvrinput";
+pub const APP_BINDING_CURRENT_URLSUFFIX_STRING: &'static str = "CurrentURL";
+pub const APP_BINDING_PREVIOUS_URLSUFFIX_STRING: &'static str = "PreviousURL";
+pub const APP_NEED_TO_UPDATE_AUTOSAVE_SUFFIX_BOOL: &'static str = "NeedToUpdateAutosave";
+pub const APP_DOMINANT_HAND_INT32: &'static str = "DominantHand";
+pub const APP_BLOCK_OCULUS_SDK_BOOL: &'static str = "blockOculusSDK";
 
 //-----------------------------------------------------------------------------
 // configuration for trackers
-pub const Trackers_Section: &'static str = "trackers";
+pub const TRACKERS_SECTION: &'static str = "trackers";
 
 //-----------------------------------------------------------------------------
 // configuration for desktop UI windows
-pub const DesktopUI_Section: &'static str = "DesktopUI";
+pub const DESKTOP_UI_SECTION: &'static str = "DesktopUI";
 
 //-----------------------------------------------------------------------------
 // Last known keys for righting recovery
-pub const LastKnown_Section: &'static str = "LastKnown";
-pub const LastKnown_HMDManufacturer_String: &'static str = "HMDManufacturer";
-pub const LastKnown_HMDModel_String: &'static str = "HMDModel";
+pub const LAST_KNOWN_SECTION: &'static str = "LastKnown";
+pub const LAST_KNOWN_HMDMANUFACTURER_STRING: &'static str = "HMDManufacturer";
+pub const LAST_KNOWN_HMDMODEL_STRING: &'static str = "HMDModel";
 
 //-----------------------------------------------------------------------------
 // Dismissed warnings
-pub const DismissedWarnings_Section: &'static str = "DismissedWarnings";
+pub const DISMISSED_WARNINGS_SECTION: &'static str = "DismissedWarnings";
 
 //-----------------------------------------------------------------------------
 // Input Settings
-pub const Input_Section: &'static str = "input";
-pub const Input_LeftThumbstickRotation_Float: &'static str = "leftThumbstickRotation";
-pub const Input_RightThumbstickRotation_Float: &'static str = "rightThumbstickRotation";
-pub const Input_ThumbstickDeadzone_Float: &'static str = "thumbstickDeadzone";
+pub const INPUT_SECTION: &'static str = "input";
+pub const INPUT_LEFT_THUMBSTICK_ROTATION_FLOAT: &'static str = "leftThumbstickRotation";
+pub const INPUT_RIGHT_THUMBSTICK_ROTATION_FLOAT: &'static str = "rightThumbstickRotation";
+pub const INPUT_THUMBSTICK_DEADZONE_FLOAT: &'static str = "thumbstickDeadzone";
 
 //-----------------------------------------------------------------------------
 // Log of GPU performance
-pub const GpuSpeed_Section: &'static str = "GpuSpeed";
+pub const GPU_SPEED_SECTION: &'static str = "GpuSpeed";
